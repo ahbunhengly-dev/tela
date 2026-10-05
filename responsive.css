@@ -1,0 +1,45 @@
+html,body{overflow-x:clip}
+.menu-btn{display:none}
+@media (max-width: 900px){
+ header{min-height:72px!important;padding:8px 16px!important;gap:8px 12px!important;position:relative}
+ header > a[aria-label] img{height:56px!important}
+ header nav[aria-label="ម៉ឺនុយមេ"]{display:none!important}
+ header.menu-open nav[aria-label="ម៉ឺនុយមេ"]{display:flex!important;flex-direction:column;align-items:stretch!important;gap:0!important;order:3;flex:1 1 100%!important;background:#fff;border-radius:12px;padding:8px!important;box-shadow:0 12px 32px rgba(28,27,22,.18)}
+ header.menu-open nav[aria-label="ម៉ឺនុយមេ"] a{padding:12px 12px!important;border-bottom:1px solid #e8e6df!important;justify-content:space-between}
+ header.menu-open nav[aria-label="ម៉ឺនុយមេ"] a:last-child{border-bottom:0!important}
+ header > div:last-child{gap:8px!important}
+ header > div:last-child button[aria-label="ស្វែងរក"]{display:none!important}
+ header > div:last-child > button,header .menu-btn{width:44px!important;height:44px!important}
+ header > div:last-child > a{padding:10px 16px!important;font-size:15px!important}
+ .menu-btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;border:1.5px solid #0a753d;background:#fff;color:#0a753d;cursor:pointer}
+}
+@media (max-width: 768px){
+ main section{padding-top:56px!important;padding-bottom:56px!important}
+ main section[aria-label="ទំព័រដើម"]{min-height:auto!important;padding:24px 16px 56px!important}
+ main section[aria-label="ទំព័រដើម"] > div[style*="border-radius:16px"]{padding:24px!important}
+ main section[aria-label="ទំព័រដើម"] h1{font-size:26px!important;line-height:1.45!important}
+ main section[aria-label="ទំព័រដើម"] p{font-size:16px!important}
+ main > section:first-child[style*="min-height:440px"]{min-height:340px!important;padding:24px 16px!important}
+ main > section:first-child > div[style*="border-radius:16px"]{padding:24px!important}
+ main h1{font-size:26px!important;line-height:1.45!important}
+ nav[aria-label="សេវាកម្ម"]{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));padding:0!important}
+ nav[aria-label="សេវាកម្ម"] a{flex-direction:column!important;padding:14px 6px!important;font-size:13px!important;text-align:center;gap:8px!important;border-bottom:1px solid #e8e6df}
+ nav[aria-label="សេវាកម្ម"] a img{width:52px!important;height:52px!important}
+ div[style*="grid-template-columns:repeat(2, minmax(0, 1fr))"]:has(> div[style*="border-top:4px"]){grid-template-columns:1fr!important}
+ form div[style*="grid-template-columns:repeat(2, minmax(0, 1fr))"],div[style*="grid-template-columns:repeat(2, minmax(0, 1fr))"]:has(> div > label){grid-template-columns:1fr!important}
+ article[style*="display:flex;min-height:200px"]{flex-direction:column!important}
+ article[style*="display:flex;min-height:200px"] > img{width:100%!important;height:180px!important}
+ #stations > div:nth-child(2) > div:first-child{min-height:780px!important}
+ #lmap,#svgmap{top:120px!important}
+ #stations [style*="top:84px"]{top:128px!important}
+ #row article{width:78vw!important}
+ .demo-badge,div[style*="Demo · តេលា"]{left:8px!important;bottom:8px!important;font-size:11px!important}
+ footer{padding-top:56px!important}
+ main div[style*="min-height:360px"]{min-height:0!important}
+ main img[style*="min-height:360px"]{min-height:240px!important;height:240px!important}
+ main section button[aria-label="ចាក់វីដេអូ"],main section button[aria-label="មើលវីដេអូពេញ"]{top:30%!important;width:72px!important;height:72px!important}
+ main section[style*="min-height:clamp(380px"],main section[style*="min-height:480px"]{min-height:420px!important}
+}
+@media (max-width: 420px){
+ nav[aria-label="សេវាកម្ម"]{grid-template-columns:repeat(2,minmax(0,1fr))}
+}

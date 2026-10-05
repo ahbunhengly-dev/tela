@@ -1,0 +1,52 @@
+@keyframes rvUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+@keyframes rvLeft{from{opacity:0;transform:translateX(-60px)}to{opacity:1;transform:none}}
+@keyframes rvRight{from{opacity:0;transform:translateX(60px)}to{opacity:1;transform:none}}
+@keyframes rvPop{0%{opacity:0;transform:translateY(30px) scale(.92)}70%{opacity:1;transform:translateY(-4px) scale(1.01)}100%{opacity:1;transform:none}}
+@keyframes wipe{from{opacity:1;clip-path:inset(0 100% 0 0 round 12px)}to{opacity:1;clip-path:inset(0 0 0 0 round 12px)}}
+@keyframes pgIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes heroIn{from{opacity:0;transform:translateY(30px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes hs{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes pinDrop{0%{opacity:0;transform:translateY(-60px) scale(.5)}55%{opacity:1;transform:translateY(6px) scale(1.08)}75%{transform:translateY(-3px)}100%{transform:none}}
+@keyframes ring{0%{transform:scale(.6);opacity:.6}100%{transform:scale(2.6);opacity:0}}
+@keyframes halo{0%,100%{box-shadow:0 0 0 12px rgba(253,184,19,.35),0 0 0 0 rgba(253,184,19,.25)}50%{box-shadow:0 0 0 22px rgba(253,184,19,.12),0 0 0 40px rgba(253,184,19,0)}}
+@keyframes cardIn{from{opacity:0;transform:translateX(40px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes shine{from{transform:translateX(-120%) skewX(-20deg)}to{transform:translateX(220%) skewX(-20deg)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.rv{opacity:0}
+.rv.in{animation:rvUp .8s cubic-bezier(.2,.75,.2,1) both;animation-delay:var(--d,0ms)}
+.rv.in.rv-l{animation-name:rvLeft}
+.rv.in.rv-r{animation-name:rvRight}
+.rv.in.rv-p{animation-name:rvPop;animation-duration:.75s}
+@keyframes fadeImg{from{opacity:0;filter:saturate(.6) brightness(1.06)}to{opacity:1;filter:none}}
+.rv.in.rv-f{animation-name:fadeImg;animation-duration:1.3s;animation-timing-function:ease}
+.rv.in.rv-w{animation-name:wipe;animation-duration:1.1s;animation-timing-function:cubic-bezier(.65,0,.35,1)}
+.pg:not([hidden]){animation:pgIn .45s ease both}
+.px{will-change:transform}
+.hero-card{animation:heroIn .9s .1s cubic-bezier(.2,.75,.2,1) both;will-change:transform}
+.hero-card > *{animation:hs .7s cubic-bezier(.2,.75,.2,1) both}
+.hero-card > *:nth-child(1){animation-delay:.35s}.hero-card > *:nth-child(2){animation-delay:.5s}.hero-card > *:nth-child(3){animation-delay:.65s}.hero-card > *:nth-child(4){animation-delay:.8s}.hero-card > *:nth-child(5){animation-delay:.95s}
+.pin-in{transform-box:fill-box;transform-origin:50% 100%;animation:pinDrop .8s cubic-bezier(.3,1.4,.5,1) both;animation-delay:var(--d,0ms)}
+.pin-sel{transform-box:fill-box;transform-origin:50% 100%;animation:pinDrop .55s cubic-bezier(.3,1.6,.5,1) both}
+.me-ring{transform-box:fill-box;transform-origin:center;animation:ring 1.8s ease-out infinite}
+.play-pulse{animation:halo 2.2s ease-in-out infinite}
+#row article{animation:cardIn .55s cubic-bezier(.2,.75,.2,1) both;animation-delay:var(--d,0ms)}
+#drop:not([hidden]){animation:rvUp .25s ease both}
+.cat-ico img{animation:bob 3s ease-in-out infinite}
+nav[aria-label="សេវាកម្ម"] a:nth-child(2) img{animation-delay:.3s}nav[aria-label="សេវាកម្ម"] a:nth-child(3) img{animation-delay:.6s}nav[aria-label="សេវាកម្ម"] a:nth-child(4) img{animation-delay:.9s}nav[aria-label="សេវាកម្ម"] a:nth-child(5) img{animation-delay:1.2s}nav[aria-label="សេវាកម្ម"] a:nth-child(6) img{animation-delay:1.5s}
+a,button,article,img{transition:transform .3s cubic-bezier(.2,.75,.2,1),box-shadow .3s ease,background-color .2s ease,border-color .2s ease,filter .3s ease}
+.lift:hover{transform:translateY(-3px)}
+.shine{position:relative;overflow:hidden}
+.shine::after{content:"";position:absolute;top:0;bottom:0;left:0;width:40%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);transform:translateX(-120%) skewX(-20deg);pointer-events:none}
+.shine:hover::after{animation:shine .8s ease}
+.tilt{transform-style:preserve-3d}
+.tilt:hover{box-shadow:0 18px 40px rgba(28,27,22,.16)}
+.zoom-img:hover{transform:scale(1.04)}
+.float-a{animation:floaty 6s ease-in-out infinite}
+.float-b{animation:floaty 7s 1s ease-in-out infinite}
+#scroll-progress{position:fixed;top:0;left:0;height:4px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,#fdb813,#00a652);z-index:100;pointer-events:none}
+@media (prefers-reduced-motion: reduce){
+ .rv{opacity:1}.rv.in,.pg:not([hidden]),.hero-card,.hero-card > *,.pin-in,.pin-sel,.me-ring,.play-pulse,#row article,#drop:not([hidden]),.cat-ico img,.float-a,.float-b{animation:none !important}
+ .lift:hover,.zoom-img:hover{transform:none}
+ #scroll-progress{display:none}
+}
